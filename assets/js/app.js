@@ -207,7 +207,7 @@ d3.csv("healthData.csv", function(err, healthData) {
         }
         else if (clickedAxis === "obese_or_overweight") {
             clickedAxis ="walked_or_biked_to_work";
-            clickedYAxis === "obese_or_overweight";
+            clickedYAxis = "obese_or_overweight";
         }
         else if (clickedAxis === "less_education") {
             clickedYAxis = "married";            
@@ -275,9 +275,6 @@ d3.csv("healthData.csv", function(err, healthData) {
             d3.selectAll(".state-abb").each(function() {
                 d3.select(this)
                 .transition()
-                .style("color", "Blue")
-                // .attr("x", cxValue)
-                // .attr("y", cyValue)
                 .attr("x", function(data) {
                     return xLinearScale(+data[clickedAxis] -0.15);
                 })
